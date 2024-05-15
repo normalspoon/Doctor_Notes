@@ -2,27 +2,25 @@
 
 <h2>Enter a New Patient</h2>
 <form action="/patients" method="POST">
-  <label>Title:
-    <input type="text" name="title">
+  <label>First name:
+    <input type="text" name="fistname">
   </label><br>
-  <label>Release Year:
-    <input type="number" name="releaseYear">
+  <label>Surname:
+    <input type="text" name="surname">
   </label><br>
-  <label>MPAA Rating
-    <select name="mpaaRating">
-      <option value="G">G</option>
-      <option value="PG">PG</option>
-      <option value="PG-13">PG-13</option>
-      <option value="R">R</option>
-    </select>
+  <label>Date of Birth:
+    <input type="number" name="dob">
   </label><br>
-  <label>Cast (separate actors with commas):
-    <input type="text" name="cast">
+  <label>Address:
+    <input type="text" name="address">
   </label><br>
-  <label>Now Showing:
-    <input type="checkbox" name="nowShowing" checked>
+  <label>Email:
+    <input type="text" name="email">
   </label><br>
-  <button type="submit">Add Movie</button>
+  <label>Phone Number:
+    <input type="number" name="phoneNo">
+  </label><br>
+  <button type="submit">Add New Patient</button>
 </form>
 
 <%- include('../partials/footer') %>
