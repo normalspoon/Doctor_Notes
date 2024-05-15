@@ -8,6 +8,9 @@ Doctor's treatment note app.
 * Each patient will have multiple treatment ntoes
 * Each treatment note will have different disease/diagnosis inputs and checkboxes to add certain diagnoses
 
+## Wireframes
+https://excalidraw.com/#json=OO32lWMF4OacC5-LzbRqW,ZiryqpcHFutOs6xU5b6_gQ
+
 ## Screenshots
 
 ### Technologies used
