@@ -7,7 +7,7 @@ router.get('/', patientsCtrl.index);
 //GET /patients/ new
 router.get('/new', patientsCtrl.new);
 
-POST /patients
+//POST /patients
 router.post('/', patientsCtrl.create)
 
 module.exports = router;

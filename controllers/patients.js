@@ -1,4 +1,4 @@
-const Movie = require('../models/patient')
+const Patient = require('../models/patient')
 
 module.exports = {
     new: newPatient,
@@ -12,16 +12,17 @@ function newPatient(req, res) {
 }
 
 async function create(req, res) {
+    console.log("create function test", JSON.stringify(req.body));
     try {
-        await patient.create(req.body);
-        res.redirect('/patients/new')
+        await Patient.create(req.body);
+        res.redirect('/patients')
     } catch (err) {
         console.log(err);
-        res.render('movies/new', { errorMsg: err.message });
+        res.render('patients/new', { errorMsg: err.message });
     }
 }
 
 async function index(req, res) {
-    const patients = await Movie.find({})
+    const patients = await Patient.find({})
     res.render('patients/index', {title: 'All Patients', patients})
 }
