@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+<div id="newNotes">
+<a href="/patients/notes" <%- title === 'A' ? 'class="active"' : '' %>>Add treatment note</a>
+</div>
+
+<h3>First Name</h3>
+<div><%= patient.firstname %></div>
+<h3>Surname</h3>
+<div><%= patient.surname %></div>
+<h3>Date of Birth</h3>
+<div><%= patient.dob.toLocaleDateString('en-AU') %></div>
+<h3>Address</h3>
+<div><%= patient.address %></div>
+<h3>Email</h3>
+<div><%= patient.email %></div>
+<h3>Phone Number</h3>
+<div><%= patient.phoneNo %></div>
+
+<%- include('../partials/footer') %>

@@ -8,5 +8,8 @@ router.get('/', patientsCtrl.index);
 router.get('/new', patientsCtrl.new);
 //POST /patients
 router.post('/', patientsCtrl.create)
+//GET/patients/:id
+router.get('/:id', patientsCtrl.show);
 
 module.exports = router; 
+

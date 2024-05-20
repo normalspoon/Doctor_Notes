@@ -8,7 +8,7 @@ const patientSchema = new mongoose.Schema({
     dob: {
         type: Date,
         default: function () {
-          return new Date.now;
+          return new Date;
         }, required: true,
       },
     address: { type: String, required: true },

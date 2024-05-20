@@ -4,6 +4,7 @@ module.exports = {
     new: newPatient,
     create,
     index,
+    show,
 };
 
 
@@ -27,3 +28,16 @@ async function index(req, res) {
     const patients = await Patient.find({})
     res.render('patients/index', {title: 'All Patients', patients})
 }
+
+async function show(req, res) {
+    try {
+        const patient = await Patient.findById(req.params.id)
+        res.render('patients/show', {
+            title: "Patient Details", patient
+        })
+    } catch (err) {
+        console.log(err);
+        res.render("patients/new", { errorMsg: err.message });
+    }
+}
+
