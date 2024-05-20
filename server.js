@@ -8,6 +8,7 @@ require('./config/database');
 
 var indexRouter = require('./routes/index');
 var patientsRouter = require('./routes/patients');
+// var notesRouter = require('./routes/notes');
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+// app.use('/', notesRouter);
 app.use('/patients', patientsRouter);
 
 // catch 404 and forward to error handler

@@ -1,0 +1,14 @@
+<%- include('../../partials/header') %>
+
+<form id="add-performer-form" action="/patients/<%= patient._id %>/notes" method="POST">
+  <label>History and Symptoms:</label>
+  <input type="text" name="history">
+  <label>Medications:</label>
+  <input type="text" name="medications">
+  <label>Treatment Notes:</label>
+  <input type="text" name="treatment">
+  <input type="submit" value="Add ">
+</form>
+
+<%- include('../../partials/footer') %>
+
