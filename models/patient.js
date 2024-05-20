@@ -9,7 +9,7 @@ const patientSchema = new mongoose.Schema({
         type: Date,
         default: function () {
           return new Date.now;
-        },
+        }, required: true,
       },
     address: { type: String, required: true },
     email: { type: String, required: true },

@@ -11,6 +11,7 @@ function newPatient(req, res) {
     res.render('patients/new', {title: 'Add New Patient'});
 }
 
+
 async function create(req, res) {
     console.log("create function test", JSON.stringify(req.body));
     try {
