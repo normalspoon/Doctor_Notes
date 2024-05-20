@@ -1,7 +1,32 @@
 <%- include('../partials/header') %>
 <div>All Patients</div>
 <a href="/patients/new" <%- title === 'A' ? 'class="active"' : '' %>>Add new Patient</a>
-
+<table id="list">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Date of Birth</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% patients.forEach(function(p) { %>
+        <tr>
+          <td><%= p.firstname %></td>
+          <td><%= p.surname %></td>
+          <td><%= p.dob %></td>
+          <td><%= p.address %></td>
+          <td><%= p.email %></td>
+          <td><%= p.phoneNo %></td>
+          <td><a href="/patients/<%= p._id %>">DETAILS</a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
 
 
 <%- include('../partials/footer') %>
