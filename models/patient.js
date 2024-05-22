@@ -2,10 +2,26 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const noteSchema = new Schema({
-    content: {
+    
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
+    history: {
         type: String,
-        required: true
-    }
+        required: true,
+        unique: false
+      },
+    medications: {
+        type: String,
+        required: true,
+        unique: false
+      },
+    treatment: {
+        type: String,
+        required: true,
+        unique: false
+      }
 })
 const patientSchema = new mongoose.Schema({
     firstname: { type: String, required: true },

@@ -11,6 +11,8 @@ router.get('/new', patientsCtrl.new);
 router.post('/', patientsCtrl.create)
 //GET/patients/:id
 router.get('/:id', patientsCtrl.show);
+
+//EMBEDDED NOTES FUNCTIONALITY BELOW
 //GET /patients/:id/notes/new
 router.get('/:id/notes/new', notesCtrl.new);
 //POST /patients/:id/notes

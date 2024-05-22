@@ -17,7 +17,34 @@
 <div><%= patient.phoneNo %></div>
 
 
+<br><br><h2>Treatment Notes</h2>
 
 
+<% if (patient.notes.length) { %>
+    <table>
+        <thead>
+          <tr>
+            <th>Date Created</th>
+            <th>History and Symptoms</th>
+            <th>Treatment Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% patient.notes.forEach(function(n) { %>
+            <tr>
+              <td><%= n.createdAt.toLocaleDateString() %></td>
+              <td><%= n.history %></td>
+              <td><%= n.medications %></td>
+              <td><a href= "/patients/notes/<%= n.id %>">OPEN</a></td>
+
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    <% } else { %>
+        <h5>No Notes Yet</h5>
+    <% } %>
+
+  
+  
 <%- include('../partials/footer') %>
-
