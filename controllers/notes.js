@@ -7,6 +7,8 @@ module.exports = {
 
 async function newNote (req, res) {
     const patient = await Patient.findById(req.params.id);
+    console.log(req.params.id)
+    console.log(patient)
     res.render('patients/notes/new', {title: 'Add Note', patient });
 }
 
@@ -22,18 +24,3 @@ console.log("create note function test", JSON.stringify(req.body));
   }
   res.redirect(`/patients/${patient._id}`)
 }
-
-//async function create(req, res) {
-    //     console.log("create note function test", JSON.stringify(req.body));
-    //     const patient = await Patient.findById(req.params.id);
-    //     const note = new Note({...req.body, patient: patient._id});
-    //     await note.save();
-    //     res.redirect(`/patients/${patient._id}`);
-    // //     patient.notes.push(req.body);
-    // //     try {
-    // //         await patient.save();
-    // //     } catch (err) {
-    // //         console.log(err);
-    // //     }
-    // //     res.redirect((`/patients/${movie._id}`))
-    // }

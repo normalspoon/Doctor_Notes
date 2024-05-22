@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const patientsCtrl = require('../controllers/patients');
-const notesCtrl = require('../controllers/notes');
+const notesRouter = require('./notes')
 
 //GET /patients
 router.get('/', patientsCtrl.index);
@@ -12,10 +12,6 @@ router.post('/', patientsCtrl.create)
 //GET/patients/:id
 router.get('/:id', patientsCtrl.show);
 
-//EMBEDDED NOTES FUNCTIONALITY BELOW
-//GET /patients/:id/notes/new
-router.get('/:id/notes/new', notesCtrl.new);
-//POST /patients/:id/notes
-router.post('/:id/notes', notesCtrl.create);
-module.exports = router; 
+router.use('/:id/notes', notesRouter) 
+module.exports = router;
 
