@@ -1,6 +1,8 @@
 <%- include('../partials/header') %>
-<a href="/patients/new" <%- title === 'A' ? 'class="active"' : '' %>>Add new Patient</a>
-<table id="list">
+<form id="add-patient"action="/patients/new" method="GET">
+    <button id="add-patient-button" type="submit" <%- title === 'A' ? 'class="active"' : '' %>>Add new Patient</button>
+</form>
+<table id="patient-list">
     <thead>
       <tr>
         <th>First Name</th>

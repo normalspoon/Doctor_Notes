@@ -1,25 +1,26 @@
 <%- include('../partials/header') %>
+<div id = "newPatient">
 
-<h2>Enter a New Patient</h2>
-<form action="/patients" method="POST">
+<h2>Add a New Patient</h2>
+<form id ="new-form" action="/patients" method="POST">
   <label>First name:
     <input type="text" name="firstname">
-  </label><br>
+  </label>
   <label>Surname:
     <input type="text" name="surname">
-  </label><br>
+  </label>
   <label>Date of Birth:
     <input type="date" name="dob">
-  </label><br>
+  </label>
   <label>Address:
     <input type="text" name="address">
-  </label><br>
+  </label>
   <label>Email:
     <input type="text" name="email">
-  </label><br>
+  </label>
   <label>Phone Number:
     <input type="number" name="phoneNo">
-  </label><br>
+  </label>
   <button type="submit">Add New Patient</button>
 </form>
 

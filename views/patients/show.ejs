@@ -2,6 +2,9 @@
 <div id="newNotes">
     <a href="/patients/<%= patient._id %>/notes/new" <%- title === 'A' ? 'class="active"' : '' %>>Add treatment note</a>
 </div>
+<form id="add-patient"action="/patients/new" method="GET">
+  <button id="add-patient-button" type="submit" <%- title === 'A' ? 'class="active"' : '' %>>Add new Patient</button>
+</form>
 
 <h3>First Name</h3>
 <div><%= patient.firstname %></div>
