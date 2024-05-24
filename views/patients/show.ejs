@@ -1,9 +1,6 @@
 <%- include('../partials/header') %>
-<div id="newNotes">
-    <a href="/patients/<%= patient._id %>/notes/new" <%- title === 'A' ? 'class="active"' : '' %>>Add treatment note</a>
-</div>
-<form id="add-patient"action="/patients/new" method="GET">
-  <button id="add-patient-button" type="submit" <%- title === 'A' ? 'class="active"' : '' %>>Add new Patient</button>
+<form id="add-patient" action="/patients/<%= patient._id %>/notes/new" method="GET">
+    <button id="add-patient-button" type="submit" <%- title === 'A' ? 'class="active"' : '' %>>Add treatment note</button>
 </form>
 
 <h3>First Name</h3>
@@ -18,10 +15,12 @@
 <div><%= patient.email %></div>
 <h3>Phone Number</h3>
 <div><%= patient.phoneNo %></div>
-<a href = "/patients/edit/<%= patient.id%>"> Edit</a>
+<form id="edit-button" action="/patients/edit/<%= patient.id%>">
+  <button type="submit">Edit</button>
+</form>
 
 
-<br><br><h2>Treatment Notes</h2>
+<br><h2>Treatment Notes</h2>
 
 
 <% if (patient.notes.length) { %>
@@ -36,12 +35,12 @@
         <tbody>
           <% patient.notes.forEach(function(n) { %>
             <tr>
-              <td class="review-user"><img alt="avatar" src="<%= n.userAvatar %>" referrerpolicy="no-referrer" ><%= n.userName %></td>
               <td><%= n.createdAt.toLocaleDateString() %></td>
               <td><%= n.history %></td>
               <td><%= n.medications %></td>
-              <td><a href= "/patients/<%= patient._id  %>/notes/<%= n.id %>">OPEN</a></td>
-              <td>
+              <td><form action= "/patients/<%= patient._id  %>/notes/<%= n.id %>">
+                <button type="submit">OPEN</button>
+                </form>
                 <form action= "/patients/<%= patient._id  %>/notes/<%= n.id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
                 </form>

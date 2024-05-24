@@ -70,6 +70,20 @@
   color: white;
 }
 
+#table-buttons {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+#delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 2px;
+  margin-left: 15px;
+}
+
 #home {
   display: flex;
   justify-content: left;
@@ -131,7 +145,7 @@ nav > a.active {
 #new-form {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 200px);
 }
 
 #new-form input {
@@ -141,9 +155,10 @@ nav > a.active {
 #new-form *,
 #add-review-form *,
 #add-performer-form * {
-  font-size: 20px;
-  padding: 5px;
+  font-size: 16px;
+  padding: 3px;
   border-radius: 5px;
+  font-family: sans-serif;
 }
 
 #new-form input[type="submit"] {

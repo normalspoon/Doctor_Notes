@@ -1,4 +1,5 @@
 <%- include('../partials/header') %>
+<h2>All Patients</h2>
 <form id="add-patient"action="/patients/new" method="GET">
     <button id="add-patient-button" type="submit" <%- title === 'A' ? 'class="active"' : '' %>>Add new Patient</button>
 </form>
@@ -17,10 +18,12 @@
           <td><%= p.firstname %></td>
           <td><%= p.surname %></td>
           <td><%= p.dob.toLocaleDateString('en-AU') %></td>
-          <td><a href="/patients/<%= p._id %>">SELECT</a></td>
-          <td>
+          <td id="table-buttons">
+            <form action="/patients/<%= p._id %>" method="GET">
+              <button type="submit">SELECT</button>
+            </form>
             <form action= "/patients/<%= p._id  %>?_method=DELETE" method="POST">
-            <button type="submit">X</button>
+            <button id="delete-button" type="submit">X</button>
             </form>
           </td>
         </tr>

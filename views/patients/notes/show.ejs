@@ -7,7 +7,7 @@
 <h3>Date of Birth</h3>
 <div><%= patient.dob.toLocaleDateString() %></div>
 
-
+<br><br>
 <form id="add-performer-form" action="/patients/<%= patient._id %>/notes/<%= note.id %>?_method=PUT" method="POST">
   <label>History and Symptoms:</label>
   <input type="text" name="history" value = "<%= note.history %>">
