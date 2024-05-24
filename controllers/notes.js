@@ -1,8 +1,8 @@
 const Patient = require('../models/patient');
-const Note = require('../models/note');  
 module.exports = {
     new: newNote,
     create,
+    show,
 }
 
 async function newNote (req, res) {
@@ -23,4 +23,19 @@ console.log("create note function test", JSON.stringify(req.body));
     console.log(err)
   }
   res.redirect(`/patients/${patient._id}`)
+}
+
+async function show(req, res) {
+    try {
+        const patient = await Patient.findById(req.params.id)
+        const noteId = req.params.noteId
+        const notes = patient.notes.find((note)=> note.id === noteId)
+        console.log(notes)
+        res.render('patients/notes/show', {
+            title: "Patient Details", patient
+        })
+    } catch (err) {
+        console.log(err);
+        res.render("patients/new", { errorMsg: err.message });
+    }
 }

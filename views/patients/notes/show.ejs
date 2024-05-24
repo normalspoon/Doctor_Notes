@@ -6,12 +6,7 @@
 <div><%= patient.surname %></div>
 <h3>Date of Birth</h3>
 <div><%= patient.dob.toLocaleDateString() %></div>
-<h3>Address</h3>
-<div><%= patient.address %></div>
-<h3>Email</h3>
-<div><%= patient.email %></div>
-<h3>Phone Number</h3>
-<div><%= patient.phoneNo %></div>
+
 
 <form id="add-performer-form" action="/patients/<%= patient._id %>/notes" method="POST">
   <label>History and Symptoms:</label>

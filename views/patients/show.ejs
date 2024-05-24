@@ -35,7 +35,7 @@
               <td><%= n.createdAt.toLocaleDateString() %></td>
               <td><%= n.history %></td>
               <td><%= n.medications %></td>
-              <td><a href= "/patients/notes/<%= n.id %>">OPEN</a></td>
+              <td><a href= "/patients/<%= patient._id  %>/notes/<%= n.id %>">OPEN</a></td>
 
             </tr>
           <% }); %>
