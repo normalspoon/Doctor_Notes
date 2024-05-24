@@ -33,6 +33,7 @@
         <tbody>
           <% patient.notes.forEach(function(n) { %>
             <tr>
+              <td class="review-user"><img alt="avatar" src="<%= n.userAvatar %>" referrerpolicy="no-referrer" ><%= n.userName %></td>
               <td><%= n.createdAt.toLocaleDateString() %></td>
               <td><%= n.history %></td>
               <td><%= n.medications %></td>

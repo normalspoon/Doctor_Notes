@@ -27,6 +27,10 @@ async function newNote (req, res) {
 async function create(req, res) {
 console.log("create note function test", JSON.stringify(req.body));
   const patient = await Patient.findById(req.params.id)
+  req.body.user = req.user._id;
+  req.body.userName = req.user.name;
+  req.body.userAvatar = req.user.avatar;
+  
   patient.notes.push(req.body);
   try {
     await patient.save();

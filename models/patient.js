@@ -21,8 +21,18 @@ const noteSchema = new Schema({
         type: String,
         required: true,
         unique: false
-      }
-})
+      },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    },
+    userName: String,
+    userAvatar: String
+  }, {
+    timestamps: true
+});
+
 const patientSchema = new mongoose.Schema({
     firstname: { type: String, required: true },
     surname: { type: String, required: true},

@@ -2,14 +2,16 @@
 
 <form action="/patients/<%= patient.id %>/notes/<%= note.id %>?_method=PUT" method="POST">
     <label>History and Symptoms:</label>
-  <input type="text" name="history" value= <%= note.history %>>
+  <input type="text" name="history" placeholder="<%= note.history%>">
   <label>Medications:</label>
-  <input type="text" name="medications" value= <%= note.medications %>>
+  <input type="text" name="medications" placeholder="<%= note.medications%>">
   <label>Treatment Notes:</label>
-  <input type="text" name="treatment" value= <%= note.treatment %>>
+  <input type="text" name="treatment" placeholder="<%= note.treatment %>">
   <input type="submit" value="Add ">
-    <button type="submit">Update Patient</button>
+    <button type="submit">Update</button>
 
 </form>
 
 <%- include('../../partials/footer') %>
+
+
