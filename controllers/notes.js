@@ -29,10 +29,10 @@ async function show(req, res) {
     try {
         const patient = await Patient.findById(req.params.id)
         const noteId = req.params.noteId
-        const notes = patient.notes.find((note)=> note.id === noteId)
-        console.log(notes)
+        const note = patient.notes.find((note)=> note.id === noteId)
+        console.log(note)
         res.render('patients/notes/show', {
-            title: "Patient Details", patient
+            title: "Patient Details", note, patient
         })
     } catch (err) {
         console.log(err);
