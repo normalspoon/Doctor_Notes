@@ -11,7 +11,12 @@ router.get('/new', patientsCtrl.new);
 router.post('/', patientsCtrl.create)
 //GET/patients/:id
 router.get('/:id', patientsCtrl.show);
+//GET Post: POSTS/:id/ 
+router.get("/edit/:id", patientsCtrl.edit)
+// UPDATE Post: POSTS/:id/
+router.put("/:id", patientsCtrl.update)
 //below is method for separating nested routes
+
 router.use('/:id/notes', notesRouter) 
 module.exports = router;
 

@@ -1,10 +1,13 @@
 const Patient = require('../models/patient')
+const mongoose = require('mongoose')
 
 module.exports = {
     new: newPatient,
     create,
     index,
     show,
+    edit,
+    update,
 };
 
 
@@ -39,5 +42,23 @@ async function show(req, res) {
         console.log(err);
         res.render("patients/new", { errorMsg: err.message });
     }
+}
+
+ async function edit(req,res) {
+    const patient =  await Patient.findById(req.params.id)
+    res.render('patients/edit', {
+        title: 'Edit Patient Details', patient
+    })
+}
+
+async function update(req, res) {
+    const filter =  { _id: new mongoose.Types.ObjectId(req.params.id) };    
+    const updateDoc = {
+        $set:  req.body
+      };
+    const patient =  await Patient.updateOne(filter, updateDoc)
+    console.log("update function test", JSON.stringify(req.body));
+
+    res.redirect(`/patients/${req.params.id}`);
 }
 

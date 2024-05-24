@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<h2>Edit Patient Details</h2>
+<form action="/patients/<%= patient.id %>?_method=PUT" method="POST">
+  <label>First name:
+    <input type="text" name="firstname" value= <%= patient.firstname %>>
+  </label><br>
+  <label>Surname:
+    <input type="text" name="surname" value= <%= patient.surname %>>
+  </label><br>
+  <label>Date of Birth:
+    <input type="date" name="dob" value="<%= (patient.dob).toISOString().slice(0,10) %>">
+  </label><br>
+  <label>Address:
+    <input type="text" name="address" value= <%= patient.address %>>
+  </label><br>
+  <label>Email:
+    <input type="text" name="email" value= <%= patient.email %>>
+  </label><br>
+  <label>Phone Number:
+    <input type="number" name="phoneNo" value= <%= patient.phoneNo %>>
+  </label><br>
+  <button type="submit">Update Patient</button>
+</form>
+
+<%- include('../partials/footer') %>
