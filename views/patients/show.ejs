@@ -37,7 +37,11 @@
               <td><%= n.history %></td>
               <td><%= n.medications %></td>
               <td><a href= "/patients/<%= patient._id  %>/notes/<%= n.id %>">OPEN</a></td>
-
+              <td>
+                <form action= "/patients/<%= patient._id  %>/notes/<%= n.id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+                </form>
+              </td>
             </tr>
           <% }); %>
         </tbody>

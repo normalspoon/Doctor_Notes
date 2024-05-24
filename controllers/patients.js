@@ -8,13 +8,21 @@ module.exports = {
     show,
     edit,
     update,
+    delete: deletePatient,
 };
 
+async function deletePatient(req, res) {
+    const patient = await Patient.findById(req.params.id);
+    if (!patient) return res.redirect('/patients');
+    // patient.notes = patient.notes.filter(n => n.id !== req.params.noteId);
+    patient.remove(req.params.id)
+    await patient.save();
+    res.redirect(`/patients`);
+  }
 
 function newPatient(req, res) {
     res.render('patients/new', {title: 'Add New Patient'});
 }
-
 
 async function create(req, res) {
     console.log("create function test", JSON.stringify(req.body));

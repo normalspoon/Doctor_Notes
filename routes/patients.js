@@ -15,7 +15,10 @@ router.get('/:id', patientsCtrl.show);
 router.get("/edit/:id", patientsCtrl.edit)
 // UPDATE Post: POSTS/:id/
 router.put("/:id", patientsCtrl.update)
+// DELETE /patients/:id/notes/:id
+router.delete('/:id', patientsCtrl.delete);
 //below is method for separating nested routes
+
 
 router.use('/:id/notes', notesRouter) 
 module.exports = router;
