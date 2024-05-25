@@ -12,6 +12,8 @@ Doctor's treatment note app.
 https://excalidraw.com/#json=OO32lWMF4OacC5-LzbRqW,ZiryqpcHFutOs6xU5b6_gQ
 
 ## Screenshots
+![img1](https://github.com/normalspoon/doctor_notes/blob/main/imgs/screenshot%202.png)
+
 
 ### Technologies used
 
