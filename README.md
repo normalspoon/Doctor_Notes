@@ -4,9 +4,11 @@ Doctor's treatment note app.
 ## Description
 
 * The user (Doctor) will be able to add new patients onto the patient database. 
-* The user (Doctors) can see all the patient's previous treatment notes and can see future treatment notes
-* Each patient will have multiple treatment ntoes
-* Each treatment note will have different disease/diagnosis inputs and checkboxes to add certain diagnoses
+* The user (Doctors) can see all the patient's previous treatment notes
+* They can add new treatment notes and view tratment notes
+* They can edit, delete and update treatment notes and patient details
+* Each patient will have multiple treatment notes
+* Each treatment note 
 
 ## Wireframes
 https://excalidraw.com/#json=OO32lWMF4OacC5-LzbRqW,ZiryqpcHFutOs6xU5b6_gQ
