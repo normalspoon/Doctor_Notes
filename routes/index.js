@@ -16,6 +16,7 @@ router.get('/auth/google', passport.authenticate(
     scope: ['profile', 'email'],
     // Optionally force pick account every time
     // prompt: "select_account"
+    redirect: '/patients'
   }
 ));
 

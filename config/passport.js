@@ -9,7 +9,6 @@ passport.use(new GoogleStrategy(
     clientSecret: process.env.GOOGLE_SECRET,
     callbackURL: process.env.GOOGLE_CALLBACK
   },
-
   async function(accessToken, refreshToken, profile, cb) {
     // When using async/await  we use a
     // try/catch block to handle an error

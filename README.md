@@ -15,13 +15,15 @@ https://excalidraw.com/#json=OO32lWMF4OacC5-LzbRqW,ZiryqpcHFutOs6xU5b6_gQ
 
 ### Technologies used
 
-Javascript, express, 
+Javascript, express, MongoDB
 
 ## Getting Started
 
 Link to app: 
-Trello Board Link: 
+https://doctor-notes.onrender.com
 
+Trello Board Link: 
+https://trello.com/b/nOK8MtJ5/project-2
 
 ### Planned future enhancements
 
