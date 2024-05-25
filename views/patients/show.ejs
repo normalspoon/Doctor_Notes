@@ -3,46 +3,45 @@
     <button id="add-patient-button" type="submit" <%- title === 'A' ? 'class="active"' : '' %>>Add treatment note</button>
 </form>
 
-<h3>First Name</h3>
+<div id="info-display">
+<div id = "first-col">First Name</div>
 <div><%= patient.firstname %></div>
-<h3>Surname</h3>
+<div id = "first-col">Surname</div>
 <div><%= patient.surname %></div>
-<h3>Date of Birth</h3>
+<div id = "first-col">Date of Birth</div>
 <div><%= patient.dob.toLocaleDateString() %></div>
-<h3>Address</h3>
+<div id = "first-col">Address</div>
 <div><%= patient.address %></div>
-<h3>Email</h3>
+<div id = "first-col">Email</div>
 <div><%= patient.email %></div>
-<h3>Phone Number</h3>
+<div id = "first-col">Phone Number</div>
 <div><%= patient.phoneNo %></div>
 <form id="edit-button" action="/patients/edit/<%= patient.id%>">
   <button type="submit">Edit</button>
 </form>
-
+</div>
 
 <br><h2>Treatment Notes</h2>
 
 
 <% if (patient.notes.length) { %>
-    <table>
+    <table id = "treatment-list">
         <thead>
           <tr>
             <th>Date Created</th>
-            <th>History and Symptoms</th>
-            <th>Treatment Notes</th>
+            <th>Treatment Preview</th>
           </tr>
         </thead>
         <tbody>
           <% patient.notes.forEach(function(n) { %>
             <tr>
               <td><%= n.createdAt.toLocaleDateString() %></td>
-              <td><%= n.history %></td>
-              <td><%= n.medications %></td>
-              <td><form action= "/patients/<%= patient._id  %>/notes/<%= n.id %>">
+              <td><%= n.treatment.split(' ').slice(0, 10).join(' ') + '...' %></td>
+              <td id = "table-buttons"><form action= "/patients/<%= patient._id  %>/notes/<%= n.id %>">
                 <button type="submit">OPEN</button>
                 </form>
                 <form action= "/patients/<%= patient._id  %>/notes/<%= n.id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
+                <button id = "delete-button" type="submit">X</button>
                 </form>
               </td>
             </tr>

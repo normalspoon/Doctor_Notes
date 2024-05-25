@@ -1,7 +1,14 @@
 <%- include('./partials/header') %>
+<div>
+    <h1>Doctor Notes</h1>
+</div>
 <div id="home">
     <h3>Hello, welcome to Doctor Notes</h3>
-    <p>Login to begin patient care</p>
+    <% if (user) { %>
+        <div>Click Patients Tab to view your patients</div>
+    <% } else { %>
+        <div>Login to begin patient care</div>
+    <% } %>
 </div>
 
 <%- include('./partials/footer') %>

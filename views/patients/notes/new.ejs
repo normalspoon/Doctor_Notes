@@ -1,13 +1,13 @@
 <%- include('../../partials/header') %>
-
-<form id="add-performer-form" action="/patients/<%= patient._id %>/notes" method="POST">
+<h2>Treatment Notes for <span id="name-emphasis"><%= patient.firstname %> <%= patient.lastname %></span></h2>
+<form id="treatment-form" action="/patients/<%= patient._id %>/notes" method="POST">
   <label>History and Symptoms:</label>
-  <input type="text" name="history">
+  <textarea name="history"></textarea>
   <label>Medications:</label>
-  <input type="text" name="medications">
+  <textarea name="medications"></textarea>
   <label>Treatment Notes:</label>
-  <input type="text" name="treatment">
-  <input type="submit" value="Add ">
+  <textarea name="treatment"></textarea>
+  <input id="add-button" type="submit" value="Add ">
 </form>
 
 <%- include('../../partials/footer') %>

@@ -41,7 +41,7 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
-    const patients = await Patient.find({})
+    const patients = await Patient.find({}).sort({surname: 1});
     res.render('patients/index', {title: 'All Patients', patients})
 }
 

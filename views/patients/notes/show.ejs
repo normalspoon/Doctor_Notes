@@ -1,20 +1,17 @@
 <%- include('../../partials/header') %>
 
-<h3>First Name</h3>
-<div><%= patient.firstname %></div>
-<h3>Surname</h3>
-<div><%= patient.surname %></div>
-<h3>Date of Birth</h3>
-<div><%= patient.dob.toLocaleDateString() %></div>
+<h2>Treatment Notes for <span id="name-emphasis"><%= patient.firstname %> (<%= patient.dob.toLocaleDateString() %>)</span></h2> 
+<div>Treatment Date: <%= note.createdAt.toLocaleDateString() %></div>
+
 
 <br><br>
-<form id="add-performer-form" action="/patients/<%= patient._id %>/notes/<%= note.id %>?_method=PUT" method="POST">
+<form id="treatment-form" action="/patients/<%= patient._id %>/notes/<%= note.id %>?_method=PUT" method="POST">
   <label>History and Symptoms:</label>
-  <input type="text" name="history" value = "<%= note.history %>">
+  <textarea  name="history"><%= note.history %></textarea>
   <label>Medications:</label>
-  <input type="text" name="medications" value = "<%= note.medications %>">
+  <textarea  name="medications"><%= note.medications %></textarea>
   <label>Treatment Notes:</label>
-  <input type="text" name="treatment" value = "<%= note.treatment %>">
+  <textarea name="treatment"><%= note.treatment %></textarea>
   <button type="submit">Update Note</button>
 </form>
 
