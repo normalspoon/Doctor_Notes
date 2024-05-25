@@ -52,6 +52,7 @@
   color: white;
   border-color: transparent;
   border-radius: 7px;
+  margin-bottom: 1px;
 }
 #add-patient-button:hover {
   background-color: rgb(255, 225, 116);
@@ -70,7 +71,7 @@
 
 #patient-list tr:nth-child(even){background-color: #f2f2f2;}
 #treatment-list tr:nth-child(even){background-color: #f2f2f2;}
-#patient-list tr, #treatment-list tr :hover {background-color: #ddd;}
+#patient-list tr, #treatment-list tr :hover {background-color: #e7e7e7;}
 
 #patient-list th, #treatment-list th {
   padding-top: 12px;

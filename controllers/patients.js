@@ -28,8 +28,6 @@ function newPatient(req, res) {
 }
 
 async function create(req, res) {
-
-
     console.log("create function test", JSON.stringify(req.body));
     try {
         await Patient.create(req.body);
