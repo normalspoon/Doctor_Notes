@@ -124,6 +124,7 @@ nav > img {
   width: 34px;
   object-fit: contain;
   margin-right: auto;
+  align-items: center;
 }
 
 body > main {

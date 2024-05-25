@@ -41,10 +41,3 @@ https://trello.com/b/nOK8MtJ5/project-2
 ```
 code blocks for commands
 ```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
